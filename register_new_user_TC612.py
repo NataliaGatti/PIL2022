@@ -90,11 +90,6 @@ enviarButton.click()
 time.sleep(2)
 
 # Validar que al verificar que el email ya se encuentra registrado en la base de datos no permite avanzar con la creación de un nuevo usuario
-#errorMessage = driver.find_element(By.XPATH, "/html/body/div[5]/div/div/div/div/div/div[2]/div/div/div/div/form/div[2]").text
-# print(errorMessage)
-#assert errorMessage == "El email ya se encuentra registrado", "Test fallido: Permite avanzar en la creación de usuario con un email ya registrado"
-#print("Test exitoso: Falla la creación de usuario cuando el email ya se encuentra registrado previamente en la base de datos")
-#driver.close()
 try:
     errorMessage = driver.find_element(By.XPATH, "/html/body/div[5]/div/div/div/div/div/div[2]/div/div/div/div/form/div[2]").is_displayed()
     if errorMessage:
