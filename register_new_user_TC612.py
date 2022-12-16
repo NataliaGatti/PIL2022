@@ -95,7 +95,9 @@ try:
     if errorMessage:
         errorMessage = driver.find_element(By.XPATH, "/html/body/div[5]/div/div/div/div/div/div[2]/div/div/div/div/form/div[2]").text
 
-        assert errorMessage != "El email ya se encuentra registrado", "Test exitoso: Falla la creación de usuario cuando el email ya se encuentra registrado previamente en la base de datos"
+        assert errorMessage == "El email ya se encuentra registrado", "Test fallido: Permite avanzar en la creación de usuario con un email ya registrado"
 except NoSuchElementException:
-    print("Test fallido: Permite avanzar en la creación de usuario con un email ya registrado")
+    print("Test exitoso: Falla la creación de usuario cuando el email ya se encuentra registrado previamente en la base de datos")
+  
+# Cerrar el webdriver
 driver.close()
