@@ -91,4 +91,6 @@ try:
         assert errorMessage != "Entre con un e-mail válido", "Test exitoso: El formulario no acepta un email inválido y muestra un mensaje de error correcto"
 except NoSuchElementException:
     print("Test fallido: El formulario acepta un email inválido y no muestra un mensaje de error")
+
+# Cerrar el webdriver
 driver.close()
